@@ -103,6 +103,67 @@ h2{font-size:25px;line-height:1.4;color:var(--navy);margin:4px 0}
 @media print{
  .topbar{position:static}.day,.intro,.food,.checklist{break-inside:avoid}
 }
+  
+/* 11/29 分流路線：左右雙欄 */
+.split-routes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 20px 0;
+}
+
+.route-card {
+  padding: 22px;
+  border-radius: 18px;
+  border: 1px solid;
+}
+
+.route-card.user {
+  background: #eaf4ff;
+  border-color: #b9d8f5;
+}
+
+.route-card.friend {
+  background: #eaf6ed;
+  border-color: #bfdfc8;
+}
+
+.route-card h3 {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.route-card.user h3 {
+  color: #356b9c;
+}
+
+.route-card.friend h3 {
+  color: #39764d;
+}
+
+.route-card p,
+.route-card li {
+  line-height: 1.8;
+}
+
+.route-card ul {
+  padding-left: 20px;
+}
+
+.meeting-point {
+  margin-top: 18px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: #f5f1e8;
+  border: 1px solid #e5dccb;
+}
+
+@media (max-width: 650px) {
+  .split-routes {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
 </style>
 </head>
 <body>
@@ -296,63 +357,45 @@ h2{font-size:25px;line-height:1.4;color:var(--navy);margin:4px 0}
       <strong>中午 12:00 起分組活動</strong>
     </div>
 
-    <div class="event">
-      <div class="time">12:00</div>
-      <div>
-        <strong>你的路線｜出發前往 INSPIRE ARENA</strong>
-        <p>從市區前往仁川永宗島場館，預計車程約 2 小時。</p>
-        <span class="tag confirm">交通方式及實際車程待確認</span>
-      </div>
-    </div>
+    
+<div class="split-routes">
 
-    <div class="event">
-      <div class="time">14:00</div>
-      <div>
-        <strong>預計抵達 INSPIRE ARENA</strong>
-        <p>預留場館周邊動線、排隊及入場準備時間。</p>
-      </div>
-    </div>
+  <!-- 左側：本人路線 -->
+  <div class="route-card user">
+    <h3>🔵 你｜NMIXX 演唱會</h3>
+    <p><strong>12:00</strong> 從首爾市區出發</p>
+    <ul>
+      <li>前往 INSPIRE ARENA</li>
+      <li>預計 14:00 抵達會場</li>
+      <li>15:00 預計開放入場</li>
+      <li>16:00 演唱會開始</li>
+      <li>約 19:30 預計結束、散場</li>
+    </ul>
+    <p><strong>主要目的：</strong>提早抵達會場，預留交通與入場時間。</p>
+  </div>
 
-    <div class="event">
-      <div class="time">15:00</div>
-      <div>
-        <strong>預計開放入場</strong>
-        <p>依主辦單位及票券公告為準。</p>
-        <span class="tag confirm">官方公告待確認</span>
-      </div>
-    </div>
+  <!-- 右側：朋友路線 -->
+  <div class="route-card friend">
+    <h3>🟢 朋友｜宮殿與市區景點</h3>
+    <p><strong>12:00</strong> 從首爾市區出發</p>
+    <ul>
+      <li>昌德宮（창덕궁）</li>
+      <li>昌慶宮（창경궁）</li>
+      <li>備選：宗廟（종묘）</li>
+      <li>備選：東大門設計廣場 DDP</li>
+    </ul>
+    <p><strong>主要目的：</strong>依照當天時間與開放狀況彈性安排。</p>
+  </div>
 
-    <div class="event">
-      <div class="time">16:00</div>
-      <div>
-        <strong>NMIXX 演唱會</strong>
-        <p>入場觀賞演出。</p>
-      </div>
-    </div>
+</div>
 
-    <div class="event">
-      <div class="time">19:30</div>
-      <div>
-        <strong>預計演出結束、散場</strong>
-        <p>實際結束時間依演出安排為準，散場交通另需預留時間。</p>
-      </div>
-    </div>
+<div class="meeting-point">
+  <strong>🍽️ 晚上會合｜弘大元祖肉煎饡</strong>
+  <p>你從演唱會會場離開後返回首爾，與兩位朋友在弘大會合，一起吃晚餐。</p>
+  <p>預計演唱會約 19:30 結束，實際會合時間依散場及交通狀況調整。</p>
+  <p>餐廳正式名稱、營業時間與集合地點仍待確認。</p>
+</div>
 
-    <div class="event">
-      <div class="time">12:00 起</div>
-      <div>
-        <strong>好友路線｜昌德宮、昌慶宮</strong>
-        <p>兩位好友從市區出發，安排昌德宮及昌慶宮參觀。</p>
-        <p>備選景點：宗廟、東大門設計廣場 DDP。</p>
-        <span class="tag confirm">各景點開放時間、休館日及參觀順序待確認</span>
-      </div>
-    </div>
-
-    <div class="note">
-      <strong>晚上｜三人重新會合</strong><br>
-      晚餐預計安排：弘大元祖肉煎饡。<br>
-      請事先約定弘大明確會合地點，並確認店家正式名稱、地址、營業時間及是否需要候位。
-    </div>
 
     <div class="alert">
       上午行程時間較緊，北村韓屋村為彈性選項，不應影響 12:00 分組出發。演唱會交通及好友宮殿行程都需要預留緩衝。
